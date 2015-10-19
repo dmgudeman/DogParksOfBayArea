@@ -9,8 +9,17 @@
 import UIKit
 
 class MyTableViewController: UITableViewController {
+  
 
-    override func viewDidLoad() {
+  
+  var myParksTextArray = ["Park 00", "Park 01", "Park 02", "Park 03", "Park 04",
+                    "Park 05", "Park 06", "Park 07", "Park 08", "Park 09",
+                    "Park 10", "Park 11", "Park 12", "Park 13", "Park 14",
+                    "Park 15", "Park 16", "Park 17", "Park 18", "Park 19"]
+
+  var myParksImageArray = ["ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery"]
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -30,24 +39,28 @@ class MyTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return myParksTextArray.count
     }
 
-    /*
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
+      
+        let cellIdentifier = "parkCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! MyTableViewCell
+        cell.myParkCellTextView?.text = myParksTextArray[indexPath.row]
+      cell.myParkCellImageView?.image = UIImage(named: myParksImageArray[indexPath.row])
 
         return cell
     }
-    */
+  
 
     /*
     // Override to support conditional editing of the table view.
