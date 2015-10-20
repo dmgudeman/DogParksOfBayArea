@@ -97,14 +97,26 @@ class MyTableViewController: UITableViewController {
     }
     */
 
-    /*
+  
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+      if segue.identifier == "expandedView"
+      {
+        if let indPath = self.tableView.indexPathForSelectedRow()
+        {
+          let detailViewController = segue.destinationViewController as! MyDetailViewController
+          detailViewController.myDetailViewTopTextViewText = self.myParksTextArray[indPath.row]
+          print("I'm here " + self.myParksTextArray[indPath.row])
+         // detailViewController.myDetailViewImageText = self.myParksImageArray[indPath.row]
+          
+          
+        }
+      }
     }
-    */
+  
 
 }
