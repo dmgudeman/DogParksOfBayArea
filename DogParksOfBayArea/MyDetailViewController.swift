@@ -26,10 +26,9 @@ class MyDetailViewController: UIViewController {
   override func viewDidLoad() {
         super.viewDidLoad()
     self.myDetailViewTopTextView.text = self.myDetailViewTopTextViewText
-    print("1. " + myDetailViewTopTextView.text!)
- //   print("2. " + myDetailViewTopTextViewText!)
-    self.myDetailViewTopTextViewText = "hello"
-    print("2. " + self.myDetailViewTopTextViewText!)
+    self.myDetailViewBottomTextView.text = self.myDetailViewBottomTextViewText
+    self.myDetailViewImage.image = UIImage(named: self.myDetailViewImageText)
+  
     // self.myDetailViewImage.image =
   //  self.myDetailViewBottomTextView.text = self.myDetailViewBottomTextViewText
     

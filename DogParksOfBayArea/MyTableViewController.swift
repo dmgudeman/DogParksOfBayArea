@@ -17,7 +17,19 @@ class MyTableViewController: UITableViewController {
                     "Park 10", "Park 11", "Park 12", "Park 13", "Park 14",
                     "Park 15", "Park 16", "Park 17", "Park 18", "Park 19"]
 
-  var myParksImageArray = ["ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery", "json", "ajax", "jquery"]
+  var myParksImageArray = ["ajax", "jquery", "json", "ajax", "jquery", "json",
+                            "ajax", "jquery", "json", "ajax", "jquery", "json",
+                            "ajax", "jquery", "json", "ajax", "jquery", "json",
+                            "ajax", "jquery"]
+  
+  var myParksDetailBottomText = ["This is the botoom. 1", "This is the botoom.2", "This is the botoom.3",
+                    "This is the botoom.4", "This is the botoom.5", "This is the botoom.6",
+                    "This is the botoom.7", "This is the botoom.8", "This is the botoom.9",
+                    "This is the botoom.10", "This is the botoom.11", "This is the botoom.12",
+                    "This is the botoom.13", "This is the botoom.14", "This is the botoom.15",
+                    "This is the botoom.16", "This is the botoom.17", "This is the botoom.18",
+                    "This is the botoom.19", "This is the botoom.20"]
+  
   
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,8 +122,9 @@ class MyTableViewController: UITableViewController {
         {
           let detailViewController = segue.destinationViewController as! MyDetailViewController
           detailViewController.myDetailViewTopTextViewText = self.myParksTextArray[indPath.row]
-          print("I'm here " + self.myParksTextArray[indPath.row])
-         // detailViewController.myDetailViewImageText = self.myParksImageArray[indPath.row]
+          detailViewController.myDetailViewBottomTextViewText = self.myParksDetailBottomText[indPath.row]
+        
+         detailViewController.myDetailViewImageText = self.myParksImageArray[indPath.row]
           
           
         }
